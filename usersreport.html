@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-用户举报</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/usersreport.min.css"/>
+</head>
+<body>
+    <div class="usersreport" id="usersreport">
+        <p class="rec_pa">用户举报</p>
+        <div class="user_kuai">
+            <p class="user_pa">状态：</p>
+            <select class="form-control">
+                <option>全部</option>
+                <option>已处理</option>
+                <option>未处理</option>
+            </select>
+        </div>
+        <div class="zblist_main">
+            <div class="user_kuai1">
+                <p class="user_pb">时间：</p>
+                <input class="form-control"  type="text" id="J-xl">
+                <p class="user_pc">—</p>
+                <input class="form-control"  type="text" id="J-x2">
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="sr-only"></label>
+                    <p class="form-control-static">关键字：</p>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword2" class="sr-only">关键字</label>
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="关键字">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+        </div>
+        <form action="">
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>举报记录id</th>
+                    <th>举报人id</th>
+                    <th>被举报人id</th>
+                    <th>举报原因</th>
+                    <th>举报详解</th>
+                    <th>状态</th>
+                    <th>举报人昵称</th>
+                    <th>被举报人昵称</th>
+                    <!--<th>提交时间</th>-->
+                    <!--<th>处理时间</th>-->
+                    <!--<th>操作</th>-->
+
+                </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="listTo in list">
+                    <td>{{listTo.id}}</td>
+                    <td>{{listTo.report_id}} </td>
+                    <td>{{listTo.user_id}}</td>
+                    <td>{{listTo.reason}}</td>
+                    <td>{{listTo.explain}}</td>
+                    <td>{{listTo.view}}
+                        <a href="">标记
+                        </a>
+                    </td>
+                    <td>{{listTo.report_nickname}}</td>
+                    <td>{{listTo.user_nickname}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </form>
+        <div class="page-bar">
+            <ul>
+                <li v-if="cur>1"><a v-on:click="cur--,pageClick()">上一页</a></li>
+                <li v-if="cur==1"><a class="banclick">上一页</a></li>
+                <li v-for="index in indexs"  v-bind:class="{ 'active': cur == index}">
+                    <a v-on:click="btnClick(index)">{{ index }}</a>
+                </li>
+                <li v-if="cur!=all"><a v-on:click="cur++,pageClick()">下一页</a></li>
+                <li v-if="cur == all"><a class="banclick">下一页</a></li>
+                <li><a>共<i>{{all}}</i>页</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="laydate.dev.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="dist/scripts/config.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script type="text/javascript" src="dist/scripts/love/usersreport.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+        laydate({
+            elem: '#J-x2'
+        });
+
+    </script>
+</body>
+</html>

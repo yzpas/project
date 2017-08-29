@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-编辑演绎认证-详情</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/deductiveediting.min.css"/>
+</head>
+<body>
+    <div class="deductiveediting" id="deductiveediting">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="member">用户ID:</label>
+                <input type="text" class="form-control" id="Id" disabled :placeholder="list.user_id">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="member">用户类型:</label>
+                <input type="text" class="form-control" id="" disabled :placeholder="list.user_type">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="member">昵称:</label>
+                <input type="text" class="form-control" id="member" disabled :placeholder="list.nickname">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="Name">真实姓名:</label>
+                <input type="email" class="form-control" id="Name" disabled :placeholder="list.realname">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="member">性别:</label>
+                <input type="text" class="form-control" id="" disabled :placeholder="list.sex">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="member">三围:</label>
+                <input type="text" class="form-control" id="" disabled :placeholder="list.threedimensional">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="member">出生日期:</label>
+                <input type="text" class="form-control" id="" disabled :placeholder="list.user_birthday">
+                <span>*</span>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label for="member">签名档:</label>-->
+                <!--<input type="text" class="form-control" id="" disabled :placeholder="list.signature">-->
+                <!--<span>*</span>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="member">用户地址:</label>-->
+                <!--<input type="text" class="form-control" id="" disabled :placeholder="list.user_address">-->
+                <!--<span>*</span>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <label for="cellphone">手机号码:</label>
+                <input type="email" class="form-control" id="cellphone" disabled :placeholder="list.mobile">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="Documenttype">证件类型:</label>
+                <input type="email" class="form-control" id="Documenttype" disabled placeholder="身份证">
+                <span>*</span>
+            </div>
+            <div class="form-group">
+                <label for="Idno">证件号:</label>
+                <input type="email" class="form-control" id="Idno" disabled :placeholder="list.IDcard_number">
+                <span>*</span>
+            </div>
+            <div class="form-groups">
+                <label >证件正面:</label>
+                <img :src="list.user_positive" alt=""/>
+                <span>*</span>
+            </div>
+            <!--<div class="form-groups">-->
+                <!--<label >证件反面:</label>-->
+                <!--<img src="http://livecdn.yunbaozhibo.com/rz_59118c8b09783.JPG" alt=""/>-->
+                <!--<span>*</span>-->
+            <!--</div>-->
+            <!--<div class="form-groups">-->
+                <!--<label >高校证书:</label>-->
+                <!--<img src="http://livecdn.yunbaozhibo.com/rz_59118c8b09783.JPG" alt=""/>-->
+                <!--<span>*</span>-->
+            <!--</div>-->
+            <div class="form-groups" >
+                <label >剧照:</label>
+                <div class="imgBox">
+                    <img :src="imgas" alt=""  v-for="imgas in list.imgs" />
+                </div>
+                <span>*</span>
+            </div>
+            <!--<div class="form-groups">-->
+                <!--<label >简历:</label>-->
+                <!--<img src="http://livecdn.yunbaozhibo.com/rz_59118c8b09783.JPG" alt=""/>-->
+                <!--<span>*</span>-->
+            <!--</div>-->
+            <div v-show="status">
+                <div class="form-groups" >
+                    <label >审核状态:</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions"  value="3" v-model="statusa"> 失败
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" checked="true"  value="1" v-model="statusa"> 审核中
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions"  value="2" v-model="statusa"> 成功
+                    </label>
+                </div>
+                <div class="form-groups">
+                    <label >失败原因:</label>
+                    <textarea class="form-control" rows="3" v-model="text"></textarea>
+                    <span>*</span>
+                </div>
+                <div class="btns">
+                    <button type="button" class="btn btn-info"  @click="Identityeditor()">确认提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <p class="alerta"></p>
+    <script type="text/javascript" src="dist/scripts/vue.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="dist/scripts/config.js"></script>
+
+    <script type="text/javascript" src="dist/scripts/userGroup/deductiveediting.js"></script>
+    <script>
+//        $("img").hover(function(){
+//            $(this).stop().animate({"width":"25%"})
+//        },function(){
+//            $(this).stop().animate({"width":"135px"})
+//        })
+    </script>
+</body>
+</html>

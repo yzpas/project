@@ -1,0 +1,97 @@
+input, select, textarea {
+  outline: none; }
+
+textarea {
+  resize: none; }
+
+.box {
+  width: 1080px;
+  display: block;
+  overflow: hidden;
+  margin: 34px auto; }
+  .box form .Box_da {
+    width: 100%;
+    overflow: hidden; }
+    .box form .Box_da .form-group {
+      width: 100%;
+      overflow: hidden; }
+      .box form .Box_da .form-group .fileLeft {
+        float: left;
+        line-height: 40px;
+        margin-right: 10px;
+        width: 200px;
+        text-align: right; }
+      .box form .Box_da .form-group #exampleInputFile, .box form .Box_da .form-group #touxexampleInputFile {
+        float: left;
+        margin-top: 8px; }
+      .box form .Box_da .form-group .form-control {
+        width: 35%;
+        float: left; }
+      .box form .Box_da .form-group .select {
+        width: 130px;
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        margin-right: 12px;
+        margin-top: 5px;
+        border-radius: 4px; }
+      .box form .Box_da .form-group .select1 {
+        width: 271px;
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        margin-right: 12px;
+        margin-top: 5px;
+        border-radius: 4px;
+        padding: 0 10px;
+        box-sizing: border-box; }
+      .box form .Box_da .form-group .textarea1 {
+        width: 60%;
+        height: 130px; }
+    .box form .Box_da .btnT {
+      display: block;
+      margin: 30px auto 0; }
+  .box .boxpa {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center; }
+  .Tg_ul{
+      width: 100%;
+      height: 55px;
+      line-height: 55px;
+
+  }
+  .Tg_ul li{
+         width: 100px;
+         float: left;
+         height: 40px;
+         line-height: 40px;
+         text-align: center;
+         border-radius: 8px;
+         color: #333333;
+      cursor: pointer;
+        margin-right: 6px;
+     }
+.Tg_ul li.ons{
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #ffffff;
+}
+.Tg_ul li:hover{
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #ffffff;
+
+}
+.hidea{
+    margin-left: 210px;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+.showa{
+    display: block;
+}
+
+
+

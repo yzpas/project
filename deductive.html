@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-演绎认证</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/deductive.min.css"/>
+</head>
+<body>
+    <div class="deductiveMain" id="deductiveMain">
+        <div class="box">
+            <div class="user_kuai">
+                <p class="user_pa">审核状态：</p>
+                <select class="form-control" v-model="selectTo">
+                    <option value="1,2,3">全部</option>
+                    <option value="1">处理中</option>
+                    <option value="2">审核成功</option>
+                    <option value="3">审核失败</option>
+                </select>
+            </div>
+            <div class="user_kuai1">
+                <p class="user_pb">注册时间：</p>
+                <input class="form-control"  type="text" id="J-xl" >
+                <p class="user_pc">—</p>
+                <input class="form-control"  type="text" id="J-x2">
+            </div>
+            <div class="form-group">
+                <label class="sr-only"></label>
+                <p class="form-control-static">关键字：</p>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword2" class="sr-only">输入id、用户名称或者名称</label>
+                <input type="text" class="form-control" id="inputPassword2" placeholder="输入id、用户名称或者名称" v-model="searchKey">
+            </div>
+        <button type="submit" class="btn btn-default" @click="soso()">搜索</button>
+        </div>
+        <form action="">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th width="5%">会员ID</th>
+                        <th width="10%">真实姓名</th>
+                        <th width="15%">手机号码</th>
+                        <th width="15%">身份证</th>
+                        <!--<th>身份证相册</th>-->
+                        <!--<th>剧照</th>-->
+                        <!--<th>简历</th>-->
+                        <!--<th>高校证书</th>-->
+                        <th width="15%">审核状态</th>
+                        <th width="15%">提交时间</th>
+                        <th width="15%">处理时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="listTo in list" :id="listTo.yanyi_id">
+                        <td >{{listTo.user_id}}</td>
+                        <td>{{listTo.realname}} </td>
+                        <td>{{listTo.mobile}} </td>
+                        <td>{{listTo.IDcard_number}}</td>
+                        <!--<td><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/></td>-->
+                        <!--<td><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/></td>-->
+                        <!--<td><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/></td>-->
+                        <!--<td><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/><img src="http://livecdn.yunbaozhibo.com/rz_59118c8139731.JPG" alt="" class="td_img1"/></td>-->
+                        <td>{{listTo.status}}</td>
+                        <td>{{listTo.create_time}}</td>
+                        <td>{{listTo.console_time}}</td>
+                        <td>
+                            <a href="javascript:void(0);" :id="listTo.yanyi_id" @click="clickId($event)">编辑</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </form>
+        <div class="page-bar">
+            <ul>
+                <li v-if="cur>1"><a v-on:click="cur--,pageClick()">上一页</a></li>
+                <li v-if="cur==1"><a class="banclick">上一页</a></li>
+                <li v-for="index in indexs"  v-bind:class="{ 'active': cur == index}">
+                    <a v-on:click="btnClick(index)">{{ index }}</a>
+                </li>
+                <li v-if="cur!=all"><a v-on:click="cur++,pageClick()">下一页</a></li>
+                <li v-if="cur == all"><a class="banclick">下一页</a></li>
+                <li><a>共<i>{{all}}</i>页</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="laydate.dev.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="dist/scripts/config.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script type="text/javascript" src="dist/scripts/userGroup/deductive.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+        laydate({
+            elem: '#J-x2'
+        });
+
+    </script>
+</body>
+</html>

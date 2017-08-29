@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/user.min.css"/>
+</head>
+<body>
+    <div class="user_main" id="userList">
+        <div class="user_top">
+
+            <div class="user_kuai1">
+                <p class="user_pb">注册时间：</p>
+                <input class="form-control"  type="text" id="J-xl" v-model="strartTime">
+                <p class="user_pc">—</p>
+                <input class="form-control"  type="text" id="J-x2" v-model="endTime">
+            </div>
+
+            <div class="user_kuai1">
+
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <p class="form-control-static">关键字：</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword2" class="sr-only">输入id、用户名称或者名称</label>
+                        <input type="text" class="form-control" id="inputPassword2" placeholder="输入id、用户名称或者名称" v-model="searchKey">
+                    </div>
+                    <button type="submit" class="btn btn-default" @click="soso()">搜索</button>
+
+            </div>
+        </div>
+
+        <form>
+            <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="1%">
+                        <label>
+                            <input type="checkbox" name="box" class="js-check-all" data-direction="x" data-checklist="js-check-x" @click="inputCheckbox()">
+                        </label>
+                    </th>
+                    <th align="center" width="4%">ID</th>
+                    <th width="10%">真实姓名</th>
+                    <th width="12%">昵称</th>
+                    <th width="5%">头像</th>
+                    <th width="6%">余额</th>
+                    <th width="10%">累计消费</th>
+                    <th width="10%">注册时间</th>
+                    <th width="10%">最后登录时间</th>
+                    <th width="10%">最后登录IP</th>
+
+
+                    <th align="center">操作</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr v-for = "listTo in list">
+                    <td>
+                        <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids" value="" title="">
+                    </td>
+                    <td>{{listTo.user_id}}</td>
+                    <td>{{listTo.realname}}</td>
+                    <td>{{listTo.nickname}}</td>
+                    <td>
+                        <img width="25" height="25" :src="listTo.user_img">
+                    </td>
+                    <td>{{listTo.kubi}}</td>
+                    <td>{{listTo.total_price}}</td>
+
+                    <td>{{listTo.registertime}}</td>
+                    <td>{{listTo.lasttime}}</td>
+                    <td>{{listTo.lastip}}</td>
+
+                    <td align="center" style="text-align: left">
+                        <a href="javascript:;" :id="listTo.user_id" @click="clicks($event)">编辑</a>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </form>
+        <div class="page-bar">
+            <ul>
+                <li v-if="cur>1"><a v-on:click="cur--,pageClick()">上一页</a></li>
+                <li v-if="cur==1"><a class="banclick">上一页</a></li>
+                <li v-for="index in indexs"  v-bind:class="{ 'active': cur == index}">
+                    <a v-on:click="btnClick(index)">{{ index }}</a>
+                </li>
+                <li v-if="cur!=all"><a v-on:click="cur++,pageClick()">下一页</a></li>
+                <li v-if="cur == all"><a class="banclick">下一页</a></li>
+                <li><a>共<i>{{all}}</i>页</a></li>
+            </ul>
+        </div>
+        </div>
+
+
+
+    <script type="text/javascript" src="laydate.dev.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="dist/scripts/config.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script type="text/javascript" src="dist/scripts/userGroup/user.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+        laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

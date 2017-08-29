@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>通告发布</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/index.css"/>
+</head>
+<body >
+    <div class="box">
+        <p class="boxpa">发布通告上传</p>
+        <form action="http://rest.yankushidai.com/index.php/Version1?c=my&a=schedule" method= "post" enctype ="multipart/form-data">
+            <input type="hidden" name="user_id" value="1"/>
+            <div class="Box_da">
+                <div class="form-group">
+                    <label for="exampleInputFile" class="fileLeft">上传通告图片：</label>
+                    <input type="file" id="exampleInputFile" name="image">
+                    <p class="help-block"></p>
+                </div>
+            </div>
+            <div class="Box_da">
+                <div class="form-group">
+                    <label  class="fileLeft">通告主题：</label>
+                    <input type="text" class="form-control" id="zhut"  placeholder="请输入通告标题(不超过30个字)" maxlength="30" name="title">
+                </div>
+            </div>
+            <!--<div class="Box_da">-->
+                <!--<div class="form-group">-->
+                    <!--<label for="touxexampleInputFile" class="fileLeft">上传头像：</label>-->
+                    <!--<input type="file" id="touxexampleInputFile">-->
+                    <!--<p class="help-block"></p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="Box_da">
+                <div class="form-group">
+                    <label  class="fileLeft">城市：</label>
+                    <select name="province" class="select form-control"></select>
+                    <select name="city" id="city" class="select form-control" ></select>
+                </div>
+            </div>
+            <div class="Box_da">
+                <div class="form-group">
+                    <label  class="fileLeft">工作地点：</label>
+                    <input type="text" name="address" id="address" class="form-control" placeholder="请输入工作地点" />
+                </div>
+            </div>
+            <div class="Box_da">
+                <div class="form-group">
+                    <label  class="fileLeft">截止时间：</label>
+                    <input class="form-control"  type="text" id="J-xl" name="acttime">
+                    <!--<select name="year1" class="select form-control"></select>-->
+                    <!--<select name="month1" class="select form-control"></select>-->
+                    <!--<select name="day1" class="select form-control"></select>-->
+                </div>
+            </div>
+            <div class="Box_da">
+                <div class="form-group">
+                    <label class="fileLeft">性别要求：</label>
+                    <select name="sex" class="form-control select select1" id="sex">
+                        <option >性别要求</option>
+                        <option value="0">不限</option>
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="Box_da">
+                <div class="form-group">
+                    <label class="fileLeft">认证要求：</label>
+                    <select name="audit" class="form-control select select1" id="audit">
+                        <option >认证要求</option>
+                        <option value="1">不限</option>
+                        <option value="1">实名认证</option>
+                        <option value="2">演绎认证</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="Box_da">
+                <div class="form-group">
+                    <label  class="fileLeft">通告类型：</label>
+                    <select name="schedule_type" class="form-control select select1" id="schedule_type">
+                        <option>通告类型</option>
+                        <option value="0">影视通告</option>
+                        <option value="1">模特招募</option>
+                        <option value="2">群众招募</option>
+                        <option value="3">主播招募</option>
+                        <option value="4">主持招募</option>
+                        <option value="5">歌手招募</option>
+                    </select>
+                </div>
+            </div>
+            <div class="Box_da">
+                <div class="form-group">
+                    <label class="fileLeft">通告详细：</label>
+                    <ul class="Tg_ul">
+                        <li class="ons">上传文本</li>
+                        <li>上传图片</li>
+                    </ul>
+                    <div class="boxa">
+                        <div class="hidea showa box1">
+                            <textarea class="form-control textarea1" name="schedule_content" rows="3" placeholder="通告详细说明，如：剧组简介，条件要求等" id="content"></textarea>
+                        </div>
+                        <div class="hidea box2">
+                            <label for="contenta" class=""></label>
+                            <input type="file" id="contenta" name="content">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Box_da">
+                <button type=""  class="btn btn-primary btnT">提交信息</button>
+            </div>
+        </form>
+
+    </div>
+    <script src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <!--<script src="dist/scripts/config.js" charset="utf-8"></script>-->
+    <!--<script src="dist/scripts/ajaxfileupload.js" charset="utf-8"></script>-->
+    <script src="dist/scripts/PCASClass.js" charset="utf-8"></script>
+    <script src="dist/scripts/YMDClass.js" charset="utf-8"></script>
+    <script src="dist/scripts/index.js"></script>
+    <script type="text/javascript" src="laydate.dev.js"></script>
+    <script type="text/javascript">
+        new PCAS("province","city","请选择省份","请选择城市") ;
+        //        new YMDselect('year1','month1','day1');
+    </script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+
+    </script>
+    <script>
+        <!--tab-->
+        $(function(){
+            $(".Tg_ul li").click(function(){
+               $(this).addClass("ons").siblings().removeClass("ons");
+                var i = $(this).index();
+                $('.boxa .hidea').eq(i).show().siblings().hide();
+            })
+        });
+    </script>
+</body>
+</html>

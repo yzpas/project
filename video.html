@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-直播监控</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/video.min.css"/>
+</head>
+<body>
+    <div class="video" id="video">
+        <p>直播监控</p>
+        <div class="video_soso">
+
+
+                <div class="form-group">
+                    <p class="form-control-static lfTo">关键字：</p>
+                    <input type="text" class="form-control lfTo w10" id="inputPassword2" placeholder="输入主播id、或者房间号">
+                    <button type="submit" class="btn btn-default lfTo">搜索</button>
+                </div>
+
+
+        </div>
+        <ul class="videos">
+            <li  @click="blocks($event)" v-for="listTo in list" >
+                <img :src="listTo.user_img" alt="" class="imgTos" :url="listTo.pull"/>
+                <p class="pa">开播时长：14:20:56</p>
+                <p class="pd">直播标题：{{listTo.title}}</p>
+                <p class="pb">主播：{{listTo.nickname}}</p>
+                <p class="pc">房间号：{{listTo.room_id}}</p>
+                <!--<button type="button" class="btn btn-info guanb">关闭</button>-->
+            </li>
+        </ul>
+        <div class="page-bar">
+            <ul>
+                <li v-if="cur>1"><a v-on:click="cur--,pageClick()">上一页</a></li>
+                <li v-if="cur==1"><a class="banclick">上一页</a></li>
+                <li v-for="index in indexs"  v-bind:class="{ 'active': cur == index}">
+                    <a v-on:click="btnClick(index)">{{ index }}</a>
+                </li>
+                <li v-if="cur!=all"><a v-on:click="cur++,pageClick()">下一页</a></li>
+                <li v-if="cur == all"><a class="banclick">下一页</a></li>
+                <li><a>共<i>{{all}}</i>页</a></li>
+            </ul>
+        </div>
+        <div class="videopopo" v-show="popo">
+            <em @click="pupu()">×</em>
+            <div id="a1"></div>
+        </div>
+        <p class="alerta"></p>
+    </div>
+
+    <script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="dist/scripts/config.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script type="text/javascript" src="dist/scripts/video/ckplayer/ckplayer.js" charset="utf-8"></script>
+    <script type="text/javascript" src="dist/scripts/love/liveVideo.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

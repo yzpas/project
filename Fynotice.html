@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-负约通告</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/alerts.min.css"/>
+</head>
+<body>
+<div class="zblist">
+    <p class="rec_pa">负约通告</p>
+    <div class="zblist_main">
+
+        <div class="user_kuai1">
+            <p class="user_pb">负约时间：</p>
+            <input class="form-control"  type="text" id="J-xl">
+            <p class="user_pc">—</p>
+            <input class="form-control"  type="text" id="J-x2">
+        </div>
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="sr-only"></label>
+                <p class="form-control-static">关键字：</p>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword2" class="sr-only">关键字</label>
+                <input type="text" class="form-control" id="inputPassword2" placeholder="关键字">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+    </div>
+    <form action="">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>通告名称</th>
+                <th>发布时间</th>
+                <th>应约时间</th>
+                <th>负约的昵称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>影视通告</td>
+                <td>2016-05-25 10：36：03 </td>
+                <td>2016-05-25 10：36：03</td>
+                <td>Fuck you</td>
+                <td>
+                    <a href="">详情</a>
+                    <a href="">删除</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" src="laydate.dev.js"></script>
+<script type="text/javascript">
+    laydate({
+        elem: '#J-xl'
+    });
+    laydate({
+        elem: '#J-x2'
+    });
+
+</script>
+</body>
+</html>

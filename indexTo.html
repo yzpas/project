@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库--首页</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/yanku.min.css"/>
+</head>
+<body>
+    <div class="admin_index" id="admin_index">
+        <div class="index_mains">
+            <div class="index_1">
+                <div class="top">用户统计</div>
+                <ul class="i_ul">
+                    <li>注册量：<span>{{indexTo.register_num}}</span></li>
+                    <li>艺人数量：<span>{{indexTo.artist_num}}</span></li>
+                    <li>演员数量：<span>{{indexTo.actor_num}}</span></li>
+                    <li>模特数量：<span>{{indexTo.model_num}}</span></li>
+                    <li>主播数量：<span>{{indexTo.anchor_num}}</span></li>
+                    <li>校园艺人数量：<span>{{indexTo.campusartist_num}}</span></li>
+                    <li>童星数量：<span>{{indexTo.childstar_num}}</span></li>
+                    <li>主持人数量：<span>{{indexTo.compere_num}}</span></li>
+                    <li>歌星数量：<span>{{indexTo.singer_num}}</span></li>
+                    <li>舞者数量：<span>{{indexTo.dancer_num}}</span></li>
+                    <li>发通告数量：<span>{{indexTo.schedule_num}}</span></li>
+                    <li>正在直播的数量：<span>{{indexTo.video_num}}</span></li>
+                    <li>报名数量：<span>{{indexTo.enroll_num}}</span></li>
+
+                </ul>
+            </div>
+            <div class="index_1">
+                <div class="top">充值数据</div>
+                <ul class="i_ul">
+                    <li>充值总金额：<span>{{indexTo.recharge_totalprice}}</span></li>
+                </ul>
+            </div>
+            <div class="index_1">
+                <div class="top">充值来源</div>
+                <ul class="i_ul">
+                    <li>微信：<span>907</span></li>
+                    <li>支付宝：<span>907</span></li>
+                    <li>苹果支付：<span>907</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="index_mains">
+            <div class="index_1">
+                <div class="top">实名审核</div>
+                <ul class="i_ul">
+                    <li>待审核数量：<span>{{indexTo.identity_wating_num}}</span></li>
+                </ul>
+            </div>
+            <div class="index_1">
+                <div class="top">演绎审核</div>
+                <ul class="i_ul">
+                    <li>待审核数量：<span>{{indexTo.yanyi_wating_num}}</span></li>
+                </ul>
+            </div>
+            <div class="index_1">
+                <div class="top">提现数据</div>
+                <ul class="i_ul">
+                    <li>提现总金额：<span>{{indexTo.withdraw_total_price}}</span></li>
+                    <li>已成功提现金额：<span>{{indexTo.withdraw_success_price}}</span></li>
+                    <li>待处理提现主播：<span>{{indexTo.withdraw_wating_anchor_num}}</span></li>
+                    <li>待处理提现金额：<span>{{indexTo.withdraw_wating_price}}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="index_mains">
+            <div class="index_2">
+                <div class="top">热门主播</div>
+                <ul class="i_ul">
+                    <li v-for = "anchor in indexTo.hot_anchor"><img :src="anchor.user_img" alt=""/><span>{{anchor.nickname}}</span><span>{{anchor.num}}</span></li>
+                </ul>
+            </div>
+            <div class="index_1">
+                <div class="top">热门报名</div>
+                <ul class="i_ul">
+                    <li v-for = "enroll in indexTo.hot_enroll">{{enroll.schedule_title}}：<span>{{enroll.num}}</span></li>
+                </ul>
+            </div>
+            <div class="index_1">
+                <div class="top">发通告</div>
+                <ul class="i_ul">
+                    <li v-for = "schedule in indexTo.schedule">{{schedule.schedule_title}}：<span>{{schedule.create_time}}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="dist/scripts/config.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue.js"></script>
+    <script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script type="text/javascript" src="dist/scripts/index/indexTo.js"></script>
+</body>
+</html>

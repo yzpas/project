@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库 - 公共设置</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/publicsettings.min.css"/>
+</head>
+<body>
+    <div class="publicsettings">
+        <p>公共设置</p>
+
+        <form action="">
+            <button type="submit" class="btn btn-success">网站信息</button>
+            <button type="submit" class="btn btn-info">APP版本管理</button>
+            <button type="submit" class="btn btn-info">分享设置</button>
+            <div class="pu_da">
+                <span>网站维护</span>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        关闭
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        开启
+                    </label>
+                </div>
+
+            </div>
+            <div class="pu_da">
+                <span>维护提示</span>
+                <textarea class="form-control" rows="3"  placeholder="请输入维护提示"></textarea>
+            </div>
+            <div class="pu_da">
+                <span>网站标题</span>
+                <input type="text" class="form-control" placeholder="请输入网站标题">
+            </div>
+            <div class="pu_da">
+                <span>网站域名</span>
+                <input type="text" class="form-control" placeholder="请输入网站域名">
+            </div>
+            <div class="pu_da">
+                <span>接口域名</span>
+                <input type="text" class="form-control" placeholder="请输入接口域名">
+            </div>
+            <div class="pu_da padd">
+                <span>版权信息</span>
+                <textarea class="form-control" rows="3" placeholder="请输入版权信息"></textarea>
+            </div>
+            <button type="submit" class="btn btn-info">保存</button>
+            <button type="submit" class="btn btn-info">返回</button>
+
+        </form>
+    </div>
+</body>
+</html>

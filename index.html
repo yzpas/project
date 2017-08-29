@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/login.min.css"/>
+</head>
+<body>
+    <div class="main" >
+        <p class="main_pa">演库</p>
+        <div class="main_d" id="login">
+            <p class="main_pb">管理员登录</p>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">账号：</span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" :value="user2" v-model = "user1">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">密码：</span>
+                <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon3" v-model = "paw" :value="paw2">
+            </div>
+                <label style="margin: 0 0 18px 82px;" @click="alocked()"><input id="remember" type="checkbox"   >记住密码</label><br>
+
+            <button type="button" class="btn btn-info" v-on:click="logins()">登录</button>
+        </div>
+    </div>
+    <div class="alerta"></div>
+    <script src="dist/scripts/jquery-1.5.2.min.js"></script>
+    <script src="dist/scripts/jquery.cookie.js"></script>
+    <script src="dist/scripts/config.js"></script>
+    <script src="dist/scripts/vue.js"></script>
+    <script src="dist/scripts/vue-resource-0.7.0.js"></script>
+    <script src="dist/scripts/login/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库 - 推送配置</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/publicsettings.min.css"/>
+</head>
+<body>
+<div class="publicsettings">
+    <p>推送配置</p>
+
+    <form action="">
+        <button type="submit" class="btn btn-info">基本设置</button>
+        <button type="submit" class="btn btn-info">登录配置</button>
+        <button type="submit" class="btn btn-info">直播配置</button>
+        <button type="submit" class="btn btn-info">提现配置</button>
+        <button type="submit" class="btn btn-success">推送配置</button>
+
+        <div class="pu_da">
+            <span>极光推送模式</span>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios3" id="optionsRadios1" value="option1" checked>
+                    开发
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios3" id="optionsRadios2" value="option2">
+                    生产
+                </label>
+            </div>
+            <p>极光推送模式</p>
+        </div>
+
+
+        <div class="pu_da">
+            <span>极光推送APP_KEY</span>
+            <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="pu_da padd">
+            <span>极光推送master_secert</span>
+            <input type="text" class="form-control" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-info">保存</button>
+        <!--<button type="submit" class="btn btn-info">返回</button>-->
+
+    </form>
+</div>
+</body>
+</html>

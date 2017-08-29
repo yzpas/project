@@ -1,0 +1,38 @@
+.publicsettings {
+  width: 96%;
+  margin: 30px auto 0; }
+  .publicsettings .btn {
+    margin-right: 12px; }
+  .publicsettings .pu_da {
+    overflow: hidden;
+    margin-top: 30px; }
+    .publicsettings .pu_da .checkbox {
+      float: left;
+      overflow: hidden;
+      margin-top: 7px; }
+    .publicsettings .pu_da span {
+      height: 34px;
+      line-height: 34px;
+      display: block;
+      float: left;
+      margin-right: 30px;
+      width: 150px;
+      text-align: right; }
+    .publicsettings .pu_da textarea {
+      float: left;
+      width: 40%; }
+    .publicsettings .pu_da input {
+      float: left;
+      width: 40%; }
+    .publicsettings .pu_da .checkboxInput {
+      width: auto !important; }
+    .publicsettings .pu_da p {
+      float: left;
+      margin-left: 10px;
+      line-height: 34px; }
+  .publicsettings .padd {
+    padding-bottom: 50px; }
+  .publicsettings .radio {
+    float: left;
+    margin-right: 20px;
+    margin-top: 7px; }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-积分等级</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/alerts.min.css"/>
+</head>
+<body>
+<div class="zblist">
+    <p class="rec_pa">积分等级</p>
+    <div class="zblist_main">
+        <button type="submit" class="btn btn-default">等级列表</button>
+        <button type="submit" class="btn btn-default">等级添加</button>
+    </div>
+    <form action="">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>等级</th>
+                <th>等级名称</th>
+                <th>积分</th>
+                <th>发布时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Lv1</td>
+                <td>49</td>
+                <td>2016-05-25 10：36：03</td>
+                <td>
+                    <a href="">删除</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" src="laydate.dev.js"></script>
+<script type="text/javascript">
+    laydate({
+        elem: '#J-xl'
+    });
+    laydate({
+        elem: '#J-x2'
+    });
+
+</script>
+</body>
+</html>

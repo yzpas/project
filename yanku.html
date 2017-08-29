@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/yanku.min.css"/>
+</head>
+<body>
+    <div class="yanku">
+        <div class="yanku_top">
+            <div class="top_main">
+                <a href="" class="yanku_a">演库后台管理中心</a>
+                <a href="" class="yanku_b">退出</a>
+            </div>
+        </div>
+    </div>
+    <div class="yanku_mains" id="srcTo">
+        <div class="yanku_left">
+            <ul class="topnav" >
+                <li>
+                    <a href="javascript:void(0);">用户管理</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">用户组</a>
+                            <ul>
+                                <li><a href="javascript:void(0);"  data-src="user.html" @click="liClick($event)">本站用户</a></li>
+                                <li><a href="javascript:void(0);" data-src="identity.html" @click="liClick($event)">身份认证</a></li>
+                                <li><a href="javascript:void(0);" data-src="deductive.html" @click="liClick($event)">演绎认证</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">财务管理</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" data-src="rechargerecord.html" @click="liClick($event)">充值记录</a></li>
+                        <li><a href="javascript:void(0);" data-src="showrecords.html" @click="liClick($event)">提现记录</a></li>
+                        <li><a href="javascript:void(0);" data-src="expensecalendar.html" @click="liClick($event)">消费记录</a></li>
+                        <!--<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">充值规则</a></li>-->
+
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);">直播管理</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" data-src="zblist.html" @click="liClick($event)">直播列表</a></li>
+                        <li><a href="javascript:void(0);" data-src="video.html" @click="liClick($event)">直播监控</a></li>
+                        <li><a href="javascript:void(0);" data-src="systemmessage.html" @click="liClick($event)">系统消息</a></li>
+                        <li><a href="javascript:void(0);" data-src="usersreport.html" @click="liClick($event)">用户举报</a></li>
+                        <li><a href="javascript:void(0);" data-src="record.html" @click="liClick($event)">直播记录</a></li>
+                    </ul>
+                </li>
+                <!--<li><a href="javascript:void(0);">内容管理</a>-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0);" data-src="feedback.html" @click="liClick($event)">用户反馈</a></li>-->
+                        <!--&lt;!&ndash;<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">页面管理</a></li>&ndash;&gt;-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li><a href="javascript:void(0);">礼物管理</a>-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0);" data-src="giftlist.html" @click="liClick($event)">礼物列表</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <li><a href="javascript:void(0);">通告管理</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" data-src="alerts.html" @click="liClick($event)">审核通告</a></li>
+                        <li><a href="javascript:void(0);" data-src="Registrationnotice.html" @click="liClick($event)">通告统计</a></li>
+                        <li><a href="javascript:void(0);" data-src="upload.html" @click="liClick($event)">发布通告</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Banner轮播管理</a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);">通告区轮播图</a>
+                            <ul>
+                                <li><a href="javascript:void(0);"  data-src="topuprules.html" @click="liClick($event)">轮播图列表</a></li>
+                                <li><a href="javascript:void(0);" data-src="addList.html" @click="liClick($event)">可添加的轮播图列表</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript:void(0);">演库/直播轮播图</a>
+                            <ul>
+                                <li><a href="javascript:void(0);"  data-src="yklist.html" @click="liClick($event)">轮播图列表</a></li>
+                                <!--<li><a href="javascript:void(0);" data-src="addList.html" @click="liClick($event)">可添加的轮播图列表</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!--<li><a href="javascript:void(0);">等级管理</a>-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0);" data-src="integralgrade.html" @click="liClick($event)">积分等级</a></li>-->
+                        <!--<li><a href="javascript:void(0);" data-src="classgrade.html" @click="liClick($event)">礼物等级</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li><a href="javascript:void(0);">登录奖励</a>-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0);" data-src="rewardmanagement.html" @click="liClick($event)">奖励管理</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li><a href="javascript:void(0);"></a>-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0);" data-src="publicsettings.html" @click="liClick($event)">公共设置</a></li>-->
+                        <!--&lt;!&ndash;<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">私密设置</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">清楚缓存</a></li>&ndash;&gt;-->
+                    <!--</ul>-->
+                <!--</li>-->
+
+
+
+
+                <!--<li><a href="javascript:void(0);">系统设置</a>-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0);">轮播管理</a>-->
+                            <!--<ul>-->
+                                <!--<li><a href="javascript:void(0);" data-src="Replace.html" @click="liClick($event)">轮播替换</a></li>-->
+                                <!--<li><a href="javascript:void(0);" data-src="Tjreplace.html" @click="liClick($event)">轮播分类</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--&lt;!&ndash;<li><a href="javascript:void(0);">pc广告图片</a>-->
+                            <!--<ul>-->
+                                <!--<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">广告图片</a></li>-->
+                                <!--<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">广告分类</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">文件存蓄</a></li>-->
+                        <!--<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">备份管理</a>-->
+                            <!--<ul>-->
+                                <!--<li><a href="javascript:void(0);" data-src="topuprules.html" @click="liClick($event)">数据备份</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>&ndash;&gt;-->
+                    <!--</ul>-->
+                <!--</li>-->
+            </ul>
+        </div>
+
+        <div class="yanku_right">
+            <iframe :src="src" style="width: 100%; height:935px; display: inline;" frameborder="0" scrolling="auto" id="appiframe-0" class="appiframe" ></iframe>
+        </div>
+    </div>
+    <script src="dist/scripts/jquery-1.5.2.min.js"></script>
+    <script src="dist/scripts/config.js"></script>
+    <script src="dist/scripts/scriptbreaker-multiple-accordion-1.js"></script>
+    <script src="dist/scripts/vue.js"></script>
+    <script src="dist/scripts/index/index.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".topnav").accordion({
+                accordion:true,
+                speed: 250,
+                closedSign: '[+]',
+                openedSign: '[-]'
+            });
+        });
+
+    </script>
+</body>
+</html>

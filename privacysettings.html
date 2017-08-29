@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库 - 基本设置</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/publicsettings.min.css"/>
+</head>
+<body>
+<div class="publicsettings">
+    <p>基本设置</p>
+
+    <form action="">
+        <button type="submit" class="btn btn-success">基本设置</button>
+        <button type="submit" class="btn btn-info">登录配置</button>
+        <button type="submit" class="btn btn-info">直播配置</button>
+        <button type="submit" class="btn btn-info">提现配置</button>
+        <button type="submit" class="btn btn-info">推送配置</button>
+
+        <div class="pu_da">
+            <span>缓存开关</span>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    关闭
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    开启
+                </label>
+            </div>
+
+        </div>
+        <div class="pu_da">
+            <span>缓存时间</span>
+            <input type="text" class="form-control" placeholder="请输入缓存时间">
+        </div>
+        <div class="pu_da">
+            <span>用户列表请求间隔</span>
+            <input type="text" class="form-control" placeholder="请输入用户列表请求间隔">
+        </div>
+        <div class="pu_da">
+            <span>弹幕费用</span>
+            <input type="text" class="form-control" placeholder="请输入弹幕费用">
+        </div>
+        <div class="pu_da">
+            <span>认证限制</span>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked>
+                    关闭
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+                    开启
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" class="checkboxInput">
+                    主播开播是否需要身份证
+                </label>
+            </div>
+        </div>
+        <div class="pu_da">
+            <span>直播等级控制</span>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios2" id="optionsRadios1" value="option1" checked>
+                    关闭
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2">
+                    开启
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" class="checkboxInput">
+                    直播等级控制是否开启
+                </label>
+            </div>
+        </div>
+        <div class="pu_da padd">
+            <span>限制等级</span>
+            <input type="text" class="form-control" placeholder="请输入限制等级">
+            <p>直播等级限制开启时，最低开播等级</p>
+        </div>
+        <button type="submit" class="btn btn-info">保存</button>
+        <!--<button type="submit" class="btn btn-info">返回</button>-->
+
+    </form>
+</div>
+</body>
+</html>

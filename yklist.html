@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>演库-演库/直播轮播图列表</title>
+    <link rel="stylesheet" href="dist/styles/normalize.css"/>
+    <link rel="stylesheet" href="dist/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="dist/styles/head.min.css"/>
+    <link rel="stylesheet" href="dist/styles/topuprules.min.css"/>
+</head>
+<body>
+<div class="topuprules" id="yklist">
+    <p class="rec_pa">演库/直播轮播图列表</p>
+        <!--<div class="form-group lfTo">-->
+            <!--<p class="form-control-static lfTo">关键字：</p>-->
+            <!--<input type="text" class="form-control lfTo w56" id="inputPassword2" placeholder="输入通告标题" v-model="searchKey">-->
+            <!--<button type="submit" class="btn btn-default" @click="soso()">搜索</button>-->
+        <!--</div>-->
+        <form action="">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>轮播图id</th>
+                <th>轮播图图片</th>
+                <th>轮播图网页地址</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- -->
+                <tr v-for="listTo in list">
+                    <td>{{listTo.activity_id}}</td>
+                    <td><img :src="listTo.activity_img" width="100"  alt=""/></td>
+                    <td><a :href="listTo.activity_url">{{listTo.activity_url}}</a></td>
+                    <td><a data-toggle="modal"  data-target="#myModal" href="#" :id="listTo.activity_id" @click="del($event)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>警告！</h4>
+                </div>
+                <div class="modal-body">确定是否删除此通告Banner</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                    <button type="button"  class="btn btn-primary btns" @click="delTo()" data-dismiss="modal">确认删除</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</div>
+<p class="alerta"></p>
+
+
+
+<script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="dist/scripts/jquery.cookie.js"></script>
+<script type="text/javascript" src="dist/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="dist/scripts/config.js"></script>
+<script type="text/javascript" src="dist/scripts/vue.js"></script>
+<script type="text/javascript" src="dist/scripts/vue-resource-0.7.0.js"></script>
+<script type="text/javascript" src="dist/scripts/banner/yklist.js"></script>
+<script>
+
+</script>
+</body>
+</html>
